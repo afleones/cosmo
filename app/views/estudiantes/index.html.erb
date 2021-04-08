@@ -1,0 +1,24 @@
+<div class="container">
+      <div class="table-responsive">
+        <h1 class="text-center">Estudiantes</h1>
+            <table class="table table-striped">
+              <tr>
+                <th class="active">tipo de documento</th>
+                <th class="active">identificacion</th>
+                <th class="active">Nombres</th>
+                <th class="active">apellidos</th>
+                <th class="active">ver</th>
+                <th class="active">Editar</th>
+              </tr>
+              <% @estudiantes.each do |estudiante| %>
+                  <tr>
+                    <td><%= link_to estudiante.tipo_documento.nombre , estudiante_path(estudiante.id)%></td>
+                    <td><%= link_to estudiante.identificacion , estudiante_path(estudiante.id)%></td>
+                    <td><%= link_to estudiante.nombres , estudiante_path(estudiante.id)%></td>
+                    <td><%= link_to estudiante.apellidos , estudiante_path(estudiante.id)%></td>
+                    <td><%= link_to estudiante.id , estudiante_path(estudiante.id)%></td>
+                    <td><%= link_to estudiante.id , edit_estudiante_path(estudiante.id)%></td>
+                  </tr>
+            </table>
+      </div>
+<% end %>
