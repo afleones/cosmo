@@ -1,0 +1,41 @@
+<div clas="row">
+  <div class="col-12 p-0 mt-3">
+    <!--title-->
+    <div class="ibox-title">
+      <h1 class="pl-4"><strong>Información del estudiante</strong></h1>
+    </div>
+    <!--Estudiante -->
+    <div class="ibox-content">
+      <div class="info col-12">
+        <div class="card border-secondar">
+          <div class="card-header d-flex justify-content-between">
+            <div class="card-subtitle">
+              <h4>Tipo de documento: <strong><%= @estudiante.tipo_documento.nombre%></strong></h4>
+              <h4>Identificacion: <strong><%= @estudiante.identificacion%></strong></h4>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card-body">
+              <h4 class="card-subtile">Nombres:</h4>
+              <p class="card-text">
+                <%= @estudiante.nombres%>
+              </p>
+            </div>
+            <div class="card-body">
+              <h4 class="card-subtile">apellidos:</h4>
+              <p class="card-text">
+                <%= @estudiante.apellidos%>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--botonera-->
+      <div class="row d-flex justify-content-start ml-3 mt-2">
+        <%= link_to "volver", estudiantes_path, class: "btn btn-block btn-danger bn-lg col-4" %>
+      </div>
+    </div>
+  </div>
+</div>
+<%= link_to 'Edit', edit_estudiante_path(@estudiante) %> |
+<%= link_to 'Back', estudiantes_path %>
