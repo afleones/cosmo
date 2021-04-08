@@ -9,8 +9,6 @@
     <br>
     <br>
     <a href="https://andresleones.com/">Developer Site</a>
-    and
-    <a href="https://www.facebook.com/padsoftOficial/">company site</a>
   </p>
 </p>
 
@@ -43,7 +41,7 @@ Several quick start options are available:
 
 3. Enter the cloned folder: <br/>
 
--     cd Ecommerce
+-     cd cosmo
  
 4. Check connections to remote sources: <br/>
 
@@ -86,7 +84,8 @@ Have a bug or a feature request? Please first read the [issue guidelines](https:
 
 ## Dependencies
 -  Ruby version: 2.7.1 </br>
--  Rails version:6.1.3</br>
+-  Rails version: 6.1.3 </br>
+-  PostgreSQL version: 13.2.1 </br>
 -  
 ## Creators
 
