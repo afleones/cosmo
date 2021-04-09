@@ -1,1 +1,1 @@
-json.array! @estudiantes, partial: "estudiantes/estudiante", as: :estudiante
+json.array! @docentes, partial: "docentes/docente", as: :docente

@@ -1,2 +1,37 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<section class="section">
+  <h1 class="text-center font-weight-bold down">Cursos Abiertos</h1>
+  <br>
+  <div class="row">
+    <div class="col-lg-2">
+
+    </div>
+    <div class="col-lg-7">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Codigo</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Fecha de inicio</th>
+            <th scope="col">Fecha de fin</th>
+            <th scope="col">Ver</th>
+            <th scope="col">Editar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @cursos.each do |curso| %>
+            <tr>
+              <th scope="row"><%= curso.codigo %></th>
+              <td><%= curso.nombre %></td>
+              <td><%= curso.fecha_inicio%></td>
+              <td><%= curso.fecha_fin %></td>
+              <td><%= link_to "ver", curso_path(curso.id), class: "btn btn-outline-success" %></td>
+              <td><%= link_to "Editar", edit_curso_path(curso.id), class: "btn btn-outline-warning" %></td>
+                <%end%>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<%= link_to "Registrar Curso", new_curso_path, class:"btn btn-outline-primary" %>

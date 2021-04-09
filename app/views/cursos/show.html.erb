@@ -1,4 +1,42 @@
 <p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_estudiante_path(@estudiante) %> |
-<%= link_to 'Back', estudiantes_path %>
+<div clas="row">
+  <div class="col-12 p-0 mt-3">
+    <!--title-->
+    <div class="ibox-title">
+      <h1 class="pl-4"><strong>Información del curso</strong></h1>
+    </div>
+    <!--Estudiante -->
+    <div class="ibox-content">
+      <div class="info col-12">
+        <div class="card border-secondar">
+          <div class="card-header d-flex justify-content-between">
+            <div class="card-subtitle">
+              <h4>Codigo del curso: <strong><%= @curso.codigo%></strong></h4>
+              <h4>Nombre del curso: <strong><%= @curso.nombre%></strong></h4>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card-body">
+              <h4 class="card-subtile">Fecha de inicio:</h4>
+              <p class="card-text">
+                <%= @curso.fecha_inicio%>
+              </p>
+            </div>
+            <div class="card-body">
+              <h4 class="card-subtile">Fecha de fin:</h4>
+              <p class="card-text">
+                <%= @curso.fecha_fin%>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--botonera-->
+      <div class="row d-flex">
+        <%= link_to "volver", cursos_path, class: "btn btn-outline-primary bn-lg col-4" %>
+        <%= link_to 'Editar', edit_curso_path(@curso), class: "btn btn-outline-primary bn-lg col-4"  %>
+        <%= link_to 'nuevo curso', new_curso_path, class: "btn btn-outline-primary bn-lg col-4"  %>
+      </div>
+    </div>
+  </div>
+</div> 

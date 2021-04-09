@@ -1,3 +1,4 @@
+<p id="notice"><%= notice %></p>
 <div clas="row">
   <div class="col-12 p-0 mt-3">
     <!--title-->
@@ -31,11 +32,12 @@
         </div>
       </div>
       <!--botonera-->
-      <div class="row d-flex justify-content-start ml-3 mt-2">
-        <%= link_to "volver", estudiantes_path, class: "btn btn-block btn-danger bn-lg col-4" %>
+      <!--botonera-->
+      <div class="row d-flex">
+        <%= link_to "volver", estudiantes_path, class: "btn btn-outline-primary bn-lg col-4" %>
+        <%= link_to 'Editar', edit_estudiante_path(@estudiante), class: "btn btn-outline-primary bn-lg col-4"  %>
+        <%= link_to 'nuevo estudiante', new_estudiante_path, class: "btn btn-outline-primary bn-lg col-4"  %>
       </div>
     </div>
   </div>
 </div>
-<%= link_to 'Edit', edit_estudiante_path(@estudiante) %> |
-<%= link_to 'Back', estudiantes_path %>

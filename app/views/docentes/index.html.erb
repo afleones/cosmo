@@ -1,2 +1,26 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container">
+      <div class="table-responsive">
+        <h1 class="text-center">Docentes</h1>
+            <table class="table table-striped">
+              <tr>
+                <th class="active">tipo de documento</th>
+                <th class="active">identificacion</th>
+                <th class="active">Nombres</th>
+                <th class="active">apellidos</th>
+                <th class="active">ver</th>
+                <th class="active">Editar</th>
+              </tr>
+              <% @docentes.each do |docente| %>
+                  <tr>
+                    <td><%= link_to docente.tipo_documento.nombre , docente_path(docente.id)%></td>
+                    <td><%= link_to docente.identificacion , docente_path(docente.id)%></td>
+                    <td><%= link_to docente.nombres , docente_path(docente.id)%></td>
+                    <td><%= link_to docente.apellidos , docente_path(docente.id)%></td>
+                    <td><%= link_to "ver", docente_path(docente.id), class: "btn btn-outline-success" %></td>
+                    <td><%= link_to "Editar", edit_docente_path(docente.id), class: "btn btn-outline-warning" %></td>
+                  </tr>
+            </table>
+      </div>
+<% end %>
+
+<%= link_to "Registrar Docente", new_docente_path, class:"btn btn-outline-primary" %>

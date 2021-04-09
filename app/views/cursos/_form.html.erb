@@ -1,17 +1,43 @@
-<%= form_with(model: estudiante) do |form| %>
-  <% if estudiante.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(estudiante.errors.count, "error") %> prohibited this estudiante from being saved:</h2>
+<div class="container">
+  <div class = "row">
+      <div class="col-md-12">
+        <%= simple_form_for(@curso) do |f| %>
+          <% @curso.errors.full_messages.each do |message| %>
+            <div class="form-group text-center be-red white">
+            <%= message %>
+            </div>
+          <%end%>
 
-      <ul>
-        <% estudiante.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.input :codigo, required: true,
+                  autofocus: true, class:"form-control", placeholder: "Digite el codigo del curso"%>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :nombre, required: true,autofocus: true, min:1,
+              class: 'form-control', placeholder: "Digite el nombre del curso"%>
+            </div>
+          </div>
+            <br>
 
-  <div class="actions">
-    <%= form.submit %>
+        <div class="row">
+              <div class="col-md-4">
+                <%= f.input :fecha_inicio, required: true,
+                    autofocus: true, class:"form-control", placeholder: "Digite su Nombre"%>
+            </div>
+            <div class="col-md-4">
+              <%= f.input :fecha_fin, required: true,
+                  autofocus: true, class:"form-control", placeholder: "Digite su Nombre"%>
+            </div>
+        </div>
+          <div class="row">
+          <div class="col-md-6">
+            <%= f.submit "Registrar Curso", class:"btn btn-success" %>
+          </div>
+          </div>
+
+
   </div>
-<% end %>
+
+        <%end%>
+      </div>
