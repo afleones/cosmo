@@ -1,37 +1,25 @@
-<section class="section">
-  <h1 class="text-center font-weight-bold down">Cursos Abiertos</h1>
-  <br>
-  <div class="row">
-    <div class="col-lg-2">
-
-    </div>
-    <div class="col-lg-7">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Codigo</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Fecha de inicio</th>
-            <th scope="col">Fecha de fin</th>
-            <th scope="col">Ver</th>
-            <th scope="col">Editar</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @cursos.each do |curso| %>
-            <tr>
-              <th scope="row"><%= curso.codigo %></th>
-              <td><%= curso.nombre %></td>
-              <td><%= curso.fecha_inicio%></td>
-              <td><%= curso.fecha_fin %></td>
-              <td><%= link_to "ver", curso_path(curso.id), class: "btn btn-outline-success" %></td>
-              <td><%= link_to "Editar", edit_curso_path(curso.id), class: "btn btn-outline-warning" %></td>
-                <%end%>
-            </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
+<div class="container">
+      <div class="table-responsive">
+        <h1 class="text-center">Cursos Disponibles</h1>
+            <table class="table table-striped">
+              <tr>
+                <th class="active">Codigo</th>
+                <th class="active">Nombre</th>
+                <th class="active">Fecha Inicio</th>
+                <th class="active">Fecha fin</th>
+                <th class="active">ver</th>
+                <th class="active">Editar</th>
+              </tr>
+              <% @cursos.each do |curso| %>
+                  <tr>
+                    <td><%=curso.codigo%></td>
+                    <td><%=curso.nombre%></td>
+                    <td><%=curso.fecha_inicio%></td>
+                    <td><%=curso.fecha_fin%></td>
+                    <td><%= link_to "ver", curso_path(curso.id), class: "btn btn-outline-success" %></td>
+                    <td><%= link_to "Editar", edit_curso_path(curso.id), class: "btn btn-outline-warning" %></td>
+                  </tr>
+            </table>
+      </div>
+<% end %>
 <%= link_to "Registrar Curso", new_curso_path, class:"btn btn-outline-primary" %>
