@@ -1,4 +1,5 @@
 class CursosController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_curso, only: %i[ show edit update destroy ]
 
   # GET /cursos or /cursos.json
