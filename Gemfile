@@ -57,3 +57,4 @@ gem 'simple_form'
 gem "font-awesome-rails"
 gem 'jquery-rails'
 gem 'toastr-rails'
+gem 'devise'

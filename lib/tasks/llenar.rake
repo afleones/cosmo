@@ -7,5 +7,6 @@ namespace :llenar do
         TipoDocumento.create(nombre: "Cedula de Extranjeria")
         Genero.create(nombre:"Masculino")
         Genero.create(nombre:"Femenino")
+        User.create(email:"admin@admin.com", password: 123456)
     end
 end
