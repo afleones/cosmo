@@ -15,15 +15,10 @@ ActiveRecord::Schema.define(version: 2021_04_09_030628) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "curso_docentes", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "cursos", force: :cascade do |t|
     t.string "nombre"
-    t.datetime "fechaInicio"
-    t.datetime "fechaFin"
+    t.date "fecha_inicio"
+    t.date "fecha_fin"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "codigo"

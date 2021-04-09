@@ -8,35 +8,91 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
   </head>
-
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Cosmo</h3>
+                <strong>CM</strong>
+            </div>
 
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href=" <% root_path %>">COSMO</a>
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-        <a class="nav-link" href="<% root_path %>">Inicio<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-        <a class="nav-link" href="<%= docentes_path %>">Docentes</a>
-            </li>
-            <li class="nav-item">
-        <a class="nav-link" href="<%= estudiantes_path %>">Estudiantes</a>
-            </li>
-            <li class="nav-item">
-        <a class="nav-link" href="<%= cursos_path %>">Cursos</a>
-            </li>
-          </ul>
+            <ul class="list-unstyled components">
+                <li class="active">
+                  <a href="<%= root_path %>">
+                      <i class="fas fa-home"></i>
+                      Inicio
+                  </a>
+
+                </li>
+                <li>
+                    <a href=" <%= docentes_path %>">
+                        <i class="fa fa-university"></i>
+                        Docentes
+                    </a>
+                    <a href=" <%= estudiantes_path %>">
+                        <i class="fa fa-graduation-cap"></i>
+                        Estudiantes
+                    </a>
+                    <a href=" <%= cursos_path %>">
+                        <i class="fa fa-leanpub"></i>
+                        Cursos
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span></span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Salir</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <%= yield %>
         </div>
-    </nav>
-
-    <div class="container">
-      <%= yield %>
     </div>
+
+
   </body>
+
+  <!-- jQuery CDN - Slim version (=without AJAX) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <!-- Popper.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  <%= javascript_pack_tag 'sidebar', 'data-turbolinks-track': 'reload' %>
+
+  <script type="text/javascript">
+      $(document).ready(function () {
+          $('#sidebarCollapse').on('click', function () {
+              $('#sidebar').toggleClass('active');
+          });
+      });
+  </script>
 </html>
