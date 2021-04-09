@@ -15,19 +15,15 @@ ActiveRecord::Schema.define(version: 2021_04_09_030628) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "curso_estudiantes", force: :cascade do |t|
-    t.bigint "estudiante_id", null: false
-    t.bigint "curso_id", null: false
+  create_table "curso_docentes", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["curso_id"], name: "index_curso_estudiantes_on_curso_id"
-    t.index ["estudiante_id"], name: "index_curso_estudiantes_on_estudiante_id"
   end
 
   create_table "cursos", force: :cascade do |t|
     t.string "nombre"
-    t.date "fecha_inicio"
-    t.date "fecha_fin"
+    t.datetime "fechaInicio"
+    t.datetime "fechaFin"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "codigo"
@@ -69,8 +65,6 @@ ActiveRecord::Schema.define(version: 2021_04_09_030628) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "curso_estudiantes", "cursos"
-  add_foreign_key "curso_estudiantes", "estudiantes"
   add_foreign_key "docentes", "generos"
   add_foreign_key "docentes", "tipo_documentos"
   add_foreign_key "estudiantes", "generos"
