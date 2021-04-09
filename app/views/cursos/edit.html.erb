@@ -1,6 +1,9 @@
-<h1>Editing Estudiante</h1>
+<h1>Editar Curso</h1>
 
-<%= render 'form', estudiante: @estudiante %>
-
-<%= link_to 'Show', @estudiante %> |
-<%= link_to 'Back', estudiantes_path %>
+<%= render 'form', curso: @curso %>
+<br>
+<div class="row">
+  <div class="col-md-6">
+    <%= link_to 'Back', cursos_path, class: "btn btn-outline-warning" %>
+  </div>
+</div>

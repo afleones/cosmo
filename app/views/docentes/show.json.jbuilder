@@ -1,1 +1,1 @@
-json.partial! "estudiantes/estudiante", estudiante: @estudiante
+json.partial! "docentes/docente", docente: @docente

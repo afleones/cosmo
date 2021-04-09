@@ -1,17 +1,44 @@
-<%= form_with(model: estudiante) do |form| %>
-  <% if estudiante.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(estudiante.errors.count, "error") %> prohibited this estudiante from being saved:</h2>
+<div class="container">
+  <div class = "row">
+      <div class="col-md-12">
+        <%= simple_form_for(@docente) do |f| %>
+          <% @docente.errors.full_messages.each do |message| %>
+            <div class="form-group text-center be-red white">
+            <%= message %>
+            </div>
+          <%end%>
 
-      <ul>
-        <% estudiante.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.input :nombres, required: true,
+                  autofocus: true, class:"form-control", placeholder: "Digite su Nombre"%>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :apellidos, required: true,autofocus: true, min:1,
+              class: 'form-control', placeholder: "Digite sus apellidos"%>
+            </div>
+          </div>
+            <br>
 
-  <div class="actions">
-    <%= form.submit %>
+        <div class="row">
+              <div class="col-md-4">
+                <%= f.association :tipo_documento, label_method: :nombre, value_method: :id, min:"1"%>
+            </div>
+            <div class="col-md-4">
+                  <%= f.input :identificacion, required: true, autofocus: true, min:1, class:"form-control", placeholder: "Digite su numero de Identificacion"%>
+            </div>
+            <div class="col-md-4">
+              <%= f.association :genero, label_method: :nombre, value_method: :id, min:"1"%>
+          </div>
+        </div>
+          <div class="row">
+          <div class="col-md-6">
+            <%= f.submit "Registrar Docente", class:"btn btn-success" %>
+          </div>
+          </div>
+
+
   </div>
-<% end %>
+
+        <%end%>
+      </div>

@@ -1,4 +1,42 @@
 <p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_estudiante_path(@estudiante) %> |
-<%= link_to 'Back', estudiantes_path %>
+<div clas="row">
+  <div class="col-12 p-0 mt-3">
+    <!--title-->
+    <div class="ibox-title">
+      <h1 class="pl-4"><strong>Información del docente</strong></h1>
+    </div>
+    <!--Estudiante -->
+    <div class="ibox-content">
+      <div class="info col-12">
+        <div class="card border-secondar">
+          <div class="card-header d-flex justify-content-between">
+            <div class="card-subtitle">
+              <h4>Tipo de documento: <strong><%= @docente.tipo_documento.nombre%></strong></h4>
+              <h4>Identificacion: <strong><%= @docente.identificacion%></strong></h4>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card-body">
+              <h4 class="card-subtile">Nombres:</h4>
+              <p class="card-text">
+                <%= @docente.nombres%>
+              </p>
+            </div>
+            <div class="card-body">
+              <h4 class="card-subtile">apellidos:</h4>
+              <p class="card-text">
+                <%= @docente.apellidos%>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--botonera-->
+      <div class="row d-flex">
+        <%= link_to "volver", docentes_path, class: "btn btn-outline-primary bn-lg col-4" %>
+        <%= link_to 'Editar', edit_docente_path(@docente), class: "btn btn-outline-primary bn-lg col-4"  %>
+        <%= link_to 'nuevo docente', new_docente_path, class: "btn btn-outline-primary bn-lg col-4"  %>
+      </div>
+    </div>
+  </div>
+</div>
