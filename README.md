@@ -73,6 +73,43 @@
 <a href="https://ibb.co/tBNnSfX"><img src="https://i.ibb.co/fMKZbRv/Captura5.png" alt="Captura5" border="0"></a>
 
 20. Within the creation of a course, courses can be assigned to teachers and if we create a course we can assign teachers to it.
+21. Within each course you can see which teachers are assigned to it, and the students enrolled
+22. We can also see within each student and teacher their corresponding courses
+23. What are you waiting for, let's go there
+24. a continuacion se adjunta MER del sistema de informacion:
+
+<a href="https://ibb.co/CnTXmDs"><img src="https://i.ibb.co/tbWNQFP/Diagrama1.png" alt="Diagrama1" border="0"></a>
+
+25. routes and requests used by the system:
+-                inicio      ROOT   home#index
+          estudiantes GET    /estudiantes(.:format)                                                                            estudiantes#index
+                      POST   /estudiantes(.:format)                                                                            estudiantes#create
+       new_estudiante GET    /estudiantes/new(.:format)                                                                        estudiantes#new
+      edit_estudiante GET    /estudiantes/:id/edit(.:format)                                                                   estudiantes#edit
+           estudiante GET    /estudiantes/:id(.:format)                                                                        estudiantes#show
+                      PATCH  /estudiantes/:id(.:format)                                                                        estudiantes#update
+                      PUT    /estudiantes/:id(.:format)                                                                        estudiantes#update
+                      DELETE /estudiantes/:id(.:format)                                                                        estudiantes#destroy
+             docentes GET    /docentes(.:format)                                                                               docentes#index
+                      POST   /docentes(.:format)                                                                               docentes#create
+          new_docente GET    /docentes/new(.:format)                                                                           docentes#new
+         edit_docente GET    /docentes/:id/edit(.:format)                                                                      docentes#edit
+              docente GET    /docentes/:id(.:format)                                                                           docentes#show
+                      PATCH  /docentes/:id(.:format)                                                                           docentes#update
+                      PUT    /docentes/:id(.:format)                                                                           docentes#update
+                      DELETE /docentes/:id(.:format)                                                                           docentes#destroy
+               cursos GET    /cursos(.:format)                                                                                 cursos#index
+                      POST   /cursos(.:format)                                                                                 cursos#create
+            new_curso GET    /cursos/new(.:format)                                                                             cursos#new
+           edit_curso GET    /cursos/:id/edit(.:format)                                                                        cursos#edit
+                curso GET    /cursos/:id(.:format)                                                                             cursos#show
+                      PATCH  /cursos/:id(.:format)                                                                             cursos#update
+                      PUT    /cursos/:id(.:format)                                                                             cursos#update
+                      DELETE /cursos/:id(.:format)                                                                             cursos#destroy
+                      GET    /*any(.:format)
+
+
+
 
 
 ## Dependencies
