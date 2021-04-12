@@ -1,4 +1,4 @@
-namespace :llenar do
+namespace :task do
   desc "Llenar datos iniciales de la aplicacion"
     task llenar: :environment do
         TipoDocumento.create(nombre: "Cédula")

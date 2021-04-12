@@ -3,23 +3,28 @@
         <h1 class="text-center">Estudiantes</h1>
             <table class="table table-striped">
               <tr>
-                <th class="active">tipo de documento</th>
-                <th class="active">identificacion</th>
+                <th class="active">Tipo de documento</th>
                 <th class="active">Nombres</th>
-                <th class="active">apellidos</th>
+                <th class="active">Apellidos</th>
+                <th class="active">Identificacion</th>
+                <th class="active">genero</th>
                 <th class="active">ver</th>
                 <th class="active">Editar</th>
+                <th class="active">Eliminar</th>
               </tr>
               <% @estudiantes.each do |estudiante| %>
-                  <tr>
-                    <td><%=estudiante.tipo_documento.nombre%></td>
-                    <td><%=estudiante.identificacion%></td>
-                    <td><%=estudiante.nombres%></td>
-                    <td><%=estudiante.apellidos%></td>
-                    <td><%= link_to "ver", estudiante_path(estudiante.id), class: "btn btn-outline-success" %></td>
-                    <td><%= link_to "Editar", edit_estudiante_path(estudiante.id), class: "btn btn-outline-warning" %></td>
-                  </tr>
+              <tr>
+                <td><%=estudiante.tipo_documento.nombre%></td>
+                <td><%=estudiante.identificacion%></td>
+                <td><%=estudiante.nombres%></td>
+                <td><%=estudiante.apellidos%></td>
+                <td><%=estudiante.genero.nombre%></td>
+                <td><%= link_to "ver", estudiante_path(estudiante.id), class: "btn btn-outline-success" %></td>
+                <td><%= link_to "Editar", edit_estudiante_path(estudiante.id), class: "btn btn-outline-warning" %></td>
+                <td><%= link_to 'Eliminar', { :action => :destroy, :id => estudiante.id }, :method => :delete, :data => { :confirm => 'Desea eliminar este estudiante?' }, class: "btn btn-outline-danger" %></td>
+                <% end %>
+              </tr>
             </table>
       </div>
-<% end %>
+
 <%= link_to "Registrar Estudiante", new_estudiante_path, class:"btn btn-outline-primary" %>
