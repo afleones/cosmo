@@ -9,17 +9,20 @@
                 <th class="active">Fecha fin</th>
                 <th class="active">ver</th>
                 <th class="active">Editar</th>
+                <th class="active">Eliminar</th>
               </tr>
               <% @cursos.each do |curso| %>
-                  <tr>
-                    <td><%=curso.codigo%></td>
-                    <td><%=curso.nombre%></td>
-                    <td><%=curso.fecha_inicio%></td>
-                    <td><%=curso.fecha_fin%></td>
-                    <td><%= link_to "ver", curso_path(curso.id), class: "btn btn-outline-success" %></td>
-                    <td><%= link_to "Editar", edit_curso_path(curso.id), class: "btn btn-outline-warning" %></td>
-                  </tr>
+              <tr>
+                <td><%=curso.codigo%></td>
+                <td><%=curso.nombre%></td>
+                <td><%=curso.fecha_inicio%></td>
+                <td><%=curso.fecha_fin%></td>
+                <td><%= link_to "ver", curso_path(curso.id), class: "btn btn-outline-success" %></td>
+                <td><%= link_to "Editar", edit_curso_path(curso.id), class: "btn btn-outline-warning" %></td>
+                <td><%= link_to 'Eliminar', { :action => :destroy, :id => curso.id }, :method => :delete, :data => { :confirm => 'Desea eliminar este curso?' }, class: "btn btn-outline-danger" %></td>
+                <% end %>
+              </tr>
             </table>
       </div>
-<% end %>
+
 <%= link_to "Registrar Curso", new_curso_path, class:"btn btn-outline-primary" %>

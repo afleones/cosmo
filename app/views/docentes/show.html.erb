@@ -28,6 +28,42 @@
                 <%= @docente.apellidos%>
               </p>
             </div>
+            <% if @docente.cursos.exists? %>
+            <div class="card-body">
+              <h4 class="card-subtile">Cursos asignados:</h4>
+              <p class="card-text">
+                <table class="table table-striped">
+                  <tr>
+                    <th class="active">Id</th>
+                    <th class="active">Codigo</th>
+                    <th class="active">Nombre</th>
+                    <th class="active">Fecha de inicio</th>
+                    <th class="active">Fecha de fin</th>
+                  </tr>
+                  <% @docente.cursos.each do |curso| %>
+                  <tr>
+                    <td><%=curso.id%></td>
+                    <td><%=curso.nombre%></td>
+                    <td><%=curso.codigo%></td>
+                    <td><%=curso.fecha_inicio%></td>
+                    <td><%=curso.fecha_fin%></td>
+                    <% end %>
+                  </tr>
+                </table>
+              </p>
+            </div>
+            <% else %>
+            <div class="card-body">
+              <h4 class="card-subtile">Docentes asignados:</h4>
+              <script type="text/javascript">
+                  alert('no hay docentes asignados')
+              </script>
+
+              <h2>No hay docentes asignados</h2>
+            </div>
+            <% end %>
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -65,6 +65,6 @@ class DocentesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def docente_params
-      params.require(:docente).permit(:tipo_documento_id,:identificacion, :nombres, :apellidos, :genero_id)
+      params.require(:docente).permit(:tipo_documento_id,:identificacion, :nombres, :apellidos, :genero_id, curso_ids:[])
     end
 end
