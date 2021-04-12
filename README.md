@@ -16,13 +16,13 @@
 
 ## Table of contents
 
-- [Installation&use](#installation and use)
+- [Installation](#installation)
 - [Creators](#creators)
 - [Copyright and license](#copyright-and-license)
 
 
 
-## installation and use
+## installation&use
 
 1. first clone the repository on your computer
 -      git clone https://github.com/afleones/cosmo.git
