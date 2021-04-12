@@ -58,7 +58,37 @@
             <script type="text/javascript">
                 alert('no hay docentes asignados')
             </script>
-
+            <h2>No hay docentes asignados</h2>
+          </div>
+          <% end %>
+          <% if @curso.docentes.exists? %>
+          <div class="card-body">
+            <h4 class="card-subtile">Estudiantes asignados:</h4>
+            <p class="card-text">
+              <table class="table table-striped">
+                <tr>
+                  <th class="active">Tipo de documento</th>
+                  <th class="active">identificacion</th>
+                  <th class="active">nombres</th>
+                  <th class="active">apellidos</th>
+                </tr>
+                <% @curso.estudiantes.each do |estudiante| %>
+                <tr>
+                  <td><%=estudiante.tipo_documento.nombre%></td>
+                  <td><%=estudiante.identificacion%></td>
+                  <td><%=estudiante.nombres%></td>
+                  <td><%=estudiante.apellidos%></td>
+                  <% end %>
+                </tr>
+              </table>
+            </p>
+          </div>
+          <% else %>
+          <div class="card-body">
+            <h4 class="card-subtile">Estudiantes matriculados:</h4>
+            <script type="text/javascript">
+                alert('no hay estudiantes asignados')
+            </script>
             <h2>No hay docentes asignados</h2>
           </div>
           <% end %>

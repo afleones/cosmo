@@ -65,6 +65,6 @@ class EstudiantesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def estudiante_params
-      params.require(:estudiante).permit(:tipo_documento_id, :identificacion, :nombres, :apellidos, :genero_id)
+      params.require(:estudiante).permit(:tipo_documento_id, :identificacion, :nombres, :apellidos, :genero_id, curso_ids:[])
     end
 end

@@ -7,6 +7,7 @@
                 <th class="active">Nombres</th>
                 <th class="active">Apellidos</th>
                 <th class="active">Identificacion</th>
+                <th class="active">Genero</th>
                 <th class="active">ver</th>
                 <th class="active">Editar</th>
                 <th class="active">Eliminar</th>
@@ -17,6 +18,7 @@
                 <td><%=docente.identificacion%></td>
                 <td><%=docente.nombres%></td>
                 <td><%=docente.apellidos%></td>
+                <td><%=docente.genero.nombre%></td>
                 <td><%= link_to "ver", docente_path(docente.id), class: "btn btn-outline-success" %></td>
                 <td><%= link_to "Editar", edit_docente_path(docente.id), class: "btn btn-outline-warning" %></td>
                 <td><%= link_to 'Eliminar', { :action => :destroy, :id => docente.id }, :method => :delete, :data => { :confirm => 'Desea eliminar este docente?' }, class: "btn btn-outline-danger" %></td>

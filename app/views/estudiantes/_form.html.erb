@@ -31,6 +31,13 @@
               <%= f.association :genero, label_method: :nombre, value_method: :id, min:"1"%>
           </div>
         </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-check">
+                <h1>Docentes</h1>
+                  <%= f.collection_check_boxes :curso_ids, Curso.all, :id, :nombre %>
+             </div>
+        </div>
           <div class="row">
           <div class="col-md-6">
             <%= f.submit "Registrar Estudiante", class:"btn btn-success" %>
