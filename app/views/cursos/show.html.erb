@@ -28,7 +28,12 @@
                 <%= @curso.fecha_fin%>
               </p>
             </div>
-
+            <div class="card-body">
+              <h4 class="card-subtile">observaciones:</h4>
+              <p class="card-text">
+                <%= @curso.observaciones%>
+              </p>
+            </div>
           </div>
           <% if @curso.docentes.exists? %>
           <div class="card-body">
