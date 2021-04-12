@@ -41,15 +41,18 @@
                     <%= f.collection_check_boxes :estudiante_ids, Estudiante.all, :id, :nombres %>
                </div>
             </div>
-
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">observaciones</span>
+        </div>
+        <%= f.input :observaciones, label: false %>
+      </div>
         </div>
           <div class="row">
-          <div class="col-md-6">
-            <%= f.submit "Registrar Curso", class:"btn btn-success" %>
-          </div>
-          </div>
-
-
+            <div class="col-md-6">
+              <%= f.submit "Registrar Curso", class:"btn btn-success" %>
+            </div>
+          </div
   </div>
 
         <%end%>
