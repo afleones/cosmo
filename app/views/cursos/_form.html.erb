@@ -21,13 +21,19 @@
             <br>
 
         <div class="row">
-              <div class="col-md-4">
+              <div class="col-md-6">
                 <%= f.input :fecha_inicio, required: true,
                     autofocus: true, class:"form-control", placeholder: "Digite su Nombre"%>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
               <%= f.input :fecha_fin, required: true,
                   autofocus: true, class:"form-control", placeholder: "Digite su Nombre"%>
+            </div>
+            <div class="col-md-4">
+              <div class="form-check">
+                  <h1>Docentes</h1>
+                    <%= f.collection_check_boxes :docente_ids, Docente.all, :id, :nombres %>
+               </div>
             </div>
         </div>
           <div class="row">
