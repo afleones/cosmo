@@ -22,7 +22,7 @@
 
 
 
-## installation&use
+## installation
 
 1. first clone the repository on your computer
 -      git clone https://github.com/afleones/cosmo.git
