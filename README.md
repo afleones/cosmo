@@ -16,13 +16,13 @@
 
 ## Table of contents
 
-- [Installation](#installation)
+- [Installation&use](#installation and use)
 - [Creators](#creators)
 - [Copyright and license](#copyright-and-license)
 
 
 
-## Installation
+## installation and use
 
 1. first clone the repository on your computer
 -      git clone https://github.com/afleones/cosmo.git
@@ -40,7 +40,9 @@
 -      BD_LOCAL_USER: postgres
 -      BD_LOCAL_PASSWORD: postgres
 9. in this way our app will be able to connect to postgres to create the necessary database:
+10. 
  <a href="https://imgbb.com/"><img src="https://i.ibb.co/h8hFpW1/Captura.png" alt="Captura" border="0"></a>
+ 
 10.We create the database with the following command:
 -      rake:db:create or rails db:create
 11. migramos nuestra base de datos a postgreSQL:
@@ -49,6 +51,28 @@
 -      rails task:llenar
 13. finally we run our app:
 -      rails s or rails server
+14. the initial page of our site is this:
+-      http://localhost:3000/users/sign_in
+     
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/d6KPc53/Captura2.png" alt="Captura2" border="0"></a>
+
+15. we access with the following credentials:
+-      username: admin@admin.com, password: 123456 - This data is recorded when we execute the aforementioned "llenar" task
+16. when we access our app it sends us to the home / index path and we enter the following view:
+ 
+<a href="https://ibb.co/FBs2DM4"><img src="https://i.ibb.co/Q68LKRv/Captura3.png" alt="Captura3" border="0"></a>
+
+17. On the left side is the navigation menu in which we have all the information system functionalities:
+-      CURSOS, DOCENTES, ESTUDIANTES
+18. If we access any of the modules, the system will send us to the index of the corresponding module and it will show us the methods that we can use, such as registering, editing and deleting 
+
+<a href="https://ibb.co/qjSCDSh"><img src="https://i.ibb.co/Gp69d6G/Captura4.png" alt="Captura4" border="0"></a>
+
+19. if we agree to register a teacher or student or course, the system sends us to the path [model / new]:
+-      http://localhost:3000/docentes/new
+<a href="https://ibb.co/tBNnSfX"><img src="https://i.ibb.co/fMKZbRv/Captura5.png" alt="Captura5" border="0"></a>
+
+20. Within the creation of a course, courses can be assigned to teachers and if we create a course we can assign teachers to it.
 
 
 ## Dependencies
