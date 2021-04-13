@@ -8,17 +8,19 @@
                 <th class="active">Apellidos</th>
                 <th class="active">Identificacion</th>
                 <th class="active">genero</th>
+                <th class="active">cursos</th>
                 <th class="active">ver</th>
                 <th class="active">Editar</th>
                 <th class="active">Eliminar</th>
               </tr>
               <% @estudiantes.each do |estudiante| %>
-              <tr>
+              <tr class="table-light">
                 <td><%=estudiante.tipo_documento.nombre%></td>
                 <td><%=estudiante.identificacion%></td>
                 <td><%=estudiante.nombres%></td>
                 <td><%=estudiante.apellidos%></td>
                 <td><%=estudiante.genero.nombre%></td>
+                <td><%=estudiante.cursos.count%></td>
                 <td><%= link_to "ver", estudiante_path(estudiante.id), class: "btn btn-outline-success" %></td>
                 <td><%= link_to "Editar", edit_estudiante_path(estudiante.id), class: "btn btn-outline-warning" %></td>
                 <td><%= link_to 'Eliminar', { :action => :destroy, :id => estudiante.id }, :method => :delete, :data => { :confirm => 'Desea eliminar este estudiante?' }, class: "btn btn-outline-danger" %></td>

@@ -5,29 +5,29 @@
             <h3>Cosmo</h3>
             <strong>CM</strong>
         </div>
-
         <ul class="list-unstyled components">
-            <li class="active">
-              <a href="<%= root_path %>">
-                  <i class="fas fa-home"></i>
-                  Inicio
-              </a>
-
-            </li>
-            <li>
-                <a href=" <%= docentes_path %>">
-                    <i class="fa fa-university"></i>
-                    Docentes
-                </a>
-                <a href=" <%= estudiantes_path %>">
-                    <i class="fa fa-graduation-cap"></i>
-                    Estudiantes
-                </a>
-                <a href=" <%= cursos_path %>">
-                    <i class="fa fa-leanpub"></i>
-                    Cursos
-                </a>
-            </li>
+          <div class="linked">
+              <li class="active">
+                <a class="links" href="<%= root_path %>">
+                    <i class="fas fa-home"></i>
+                    Inicio
+                  </a>
+              </li>
+                <li>
+                    <a class="links" href=" <%= docentes_path %>">
+                        <i class="fa fa-university"></i>
+                        Docentes
+                    </a>
+                    <a class="links" href=" <%= estudiantes_path %>">
+                        <i class="fa fa-graduation-cap"></i>
+                        Estudiantes
+                    </a>
+                    <a class="links" href=" <%= cursos_path %>">
+                        <i class="fa fa-school"></i>
+                        Cursos
+                    </a>
+                </li>
+            </div>
         </ul>
     </nav>
 
@@ -44,11 +44,13 @@
                 <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-align-justify"></i>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item">
-                          <%= link_to destroy_user_session_path, method: :delete, class:"btn btn-danger" do %>
+                          <div class= "btn btn-primary disabled">
+                            <%=current_user.email %>
+                          </div>
+                          <%= link_to destroy_user_session_path, method: :delete, class:"name" do %>
                           Cerrar sesión
                           <%end%>
                         </li>

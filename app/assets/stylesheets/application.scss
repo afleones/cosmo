@@ -16,9 +16,37 @@
  @import "bootstrap/scss/bootstrap";
  @import "font-awesome";
 
+.linked{
+   margin-top: 100px;
+ }
+
+.name{
+   color: white;
+   border-radius: 5px;
+   border: red 1px solid;
+   padding: 10px;
+ }
+
+ .name:hover{
+   background-color: #ff0000;
+   text-decoration: none;
+   color: #fff;
+   padding: 15px;
+ }
+
+ a.links{
+   color: white;
+   margin-top: 10px;
+ }
+
+ a.links:hover {
+  background: none;
+  text-decoration: none;
+}
 
  a:hover {
   background: none;
+  text-decoration: none;
 }
 /*
     DEMO STYLE
